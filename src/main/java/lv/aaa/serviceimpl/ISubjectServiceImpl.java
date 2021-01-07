@@ -91,8 +91,4 @@ public class ISubjectServiceImpl implements ISubjectService {
         service.scheduleAtFixedRate(runnable, 10, 1, TimeUnit.SECONDS);
 
     }*/
-    public static void main(String[] args) {
-        System.out.println("我是测试加入进去的代码");
-        System.out.println("我是第二行");
-    }
 }
