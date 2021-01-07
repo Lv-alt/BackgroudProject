@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e342821-5246-463d-80d0-6f1d6025c5d2" name="Default Changelist" comment="" />
-    <ignored path="$PROJECT_DIR$/target/" />
-    <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="204d5ca3-9cdf-4aba-a525-c838f8163340" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/ISubjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/ISubjectServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/ISubjectServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="385">
+              <caret line="94" column="4" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -29,118 +28,24 @@
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>gson</find>
-      <find>getTeacherBySubject</find>
-      <find>update</find>
-      <find>generateSubject</find>
-      <find>ssm_fkstate</find>
-      <find>getStudentInfoByStudentId</find>
-      <find>getClassByUser</find>
-      <find>getUserByClassAndSubject</find>
-      <find>ssm</find>
-    </findStrings>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/controller/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/filter/MyUsernamePasswordAuthenticationFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/JacksonConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/dao/IModularDao.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/IModularMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/IModularServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/service/IModularService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/controller/MenuController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/entity/T_class.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/IClassMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/service/IClassService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/IClassServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/entity/T_SubjectType.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/ISubjectTypeMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/service/ISubjectTypeService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/ISubjectTypeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/controller/SubjectTypeController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/entity/T_user.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/dao/IClassDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/dao/SubjectDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/service/IUserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/WebStrat.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/util/EncapsulationDate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/dao/IUserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/dao/ISubjectTypeDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/util/Lv_Encapsulation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/entity/t_subjectState.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/dao/ISubjectStateDao.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/ISubjectStateMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/service/ISubjectStateService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/ISubjectStateServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/controller/SubejctStateController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/controller/TeacherController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/controller/ClassController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/conf/SecurityConf.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/dao/IStudentDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/service/IStudentService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/IStudentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/controller/StudentController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/IStudentMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/IUserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/IUserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/dao/ISubjectDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/util/EncapsulationData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/service/ISubjectService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lv/aaa/controller/SubjectController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/ISubjectMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/ISubjectServiceImpl.java" />
       </list>
     </option>
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="D:/app/soft/ideaAndMaven/apache-maven-3.6.1" />
-        <option name="userSettingsFile" value="D:\app\soft\ideaAndMaven\apache-maven-3.6.1\conf\settings.xml" />
-      </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="test-14" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="test-14" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -154,110 +59,6 @@
               <item name="lv-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="lv-project" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="lv-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lv-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lv-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lv-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lv-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lv-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lv-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lv-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="aaa" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lv-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lv-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="aaa" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lv-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lv-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="aaa" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lv-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lv-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="aaa" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lv-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lv-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="aaa" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lv-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lv-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="aaa" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lv-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lv-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="aaa" type="462c0819:PsiDirectoryNode" />
-              <item name="serviceimpl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lv-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lv-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="aaa" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lv-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lv-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lv-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lv-project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -267,180 +68,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1609979406391" />
-    <property name="last_opened_file_path" value="D:/AAA所用/java/Java高级特性/2020-12-31/test_jwt_330_01" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="lv.aaa" />
-      <recent name="lv.aaa.filter" />
-      <recent name="lv.aaa.util" />
-    </key>
-  </component>
-  <component name="RestClientSettings">
-    <option name="REQUEST_HISTORY">
-      <list>
-        <RestClientRequest>
-          <option name="biscuits">
-            <list>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="JSESSIONID" />
-                <option name="path" value="/" />
-                <option name="value" value="C100F5FE615911603629534C46A2440F" />
-              </Biscuit>
-            </list>
-          </option>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:9999" />
-          <option name="urlPath" value="/login" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{'username':'律维辰','password':'1234'}" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="biscuits">
-            <list>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="JSESSIONID" />
-                <option name="path" value="/" />
-                <option name="value" value="8DD9495DCB266F84143D398F2748F6F3" />
-              </Biscuit>
-            </list>
-          </option>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:9999" />
-          <option name="urlPath" value="/login" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="'{'username':'律维辰','password':'1234'}'" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:9999" />
-          <option name="urlPath" value="/login" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="律维辰" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="password" />
-                <option name="value" value="1234" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="/login" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="律" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="password" />
-                <option name="value" value="1234" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:8080" />
-          <option name="urlPath" value="test" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-      </list>
-    </option>
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1609983231648" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -453,33 +81,6 @@
         </RuleState>
       </list>
     </option>
-  </component>
-  <component name="RunManager" selected="Application.ISubjectServiceImpl">
-    <configuration name="ISubjectServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lv.aaa.serviceimpl.ISubjectServiceImpl" />
-      <module name="lv-project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lv.aaa.serviceimpl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WebStrat" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="lv-project" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="lv.aaa.WebStrat" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.ISubjectServiceImpl" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -497,12 +98,12 @@
       <workItem from="1609200379064" duration="42251000" />
       <workItem from="1609648250264" duration="20298000" />
       <workItem from="1609749307356" duration="47934000" />
-      <workItem from="1609980297216" duration="284000" />
+      <workItem from="1609980297216" duration="1883000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114973000" />
+    <option name="totallyTimeSpent" value="1126000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -515,7 +116,7 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.20797227" visible="true" weight="0.26076922" />
+      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.20797227" weight="0.26076922" />
       <window_info anchor="bottom" id="REST Client" order="0" weight="0.06585789" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32928944" />
@@ -551,11 +152,11 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.20797227" visible="true" weight="0.2546154" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.20797227" visible="true" weight="0.26076922" />
       <window_info anchor="bottom" id="REST Client" order="0" weight="0.06585789" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32928944" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49923077" visible="true" weight="0.12651646" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49923077" weight="0.12651646" />
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49923077" weight="0.36395147" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -579,9 +180,6 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
     </layout-to-restore>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/lv/aaa/dao/SubjectDao.java" />
@@ -1004,28 +602,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/ISubjectServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="385">
+          <caret line="94" column="4" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
