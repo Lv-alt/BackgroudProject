@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lv.aaa.dao.ISubjectDao">
+
+    <update id="updateSubject">
+        update t_subject set s_limitDate = #{limitDateString},
+        s_connectTeacher=#{teacherId},s_fkClass=#{classId},s_generateDate=now(),
+        s_fksubjectType=#{subjectTypeId} where s_id = #{subjectId}
+    </update>
+
+    <insert id="generateSubject" keyProperty="subjectId" useGeneratedKeys="true">
+        insert into t_subject
+        (s_fksubjectType,s_subjectName,s_subjectUploadPath)
+        values(3,#{s_subjectName},#{s_subjectUploadPath})
+    </insert>
+
+    <insert id="generateSituation" keyProperty="subjectId" useGeneratedKeys="true">
+        insert into t_subject(s_limitDate,s_connectTeacher,s_fkClass,s_generateDate,s_fksubjectType,s_subjectName)
+values(#{limitDateString},#{teacherId},#{classId},now(),#{subjectTypeId},#{s_subjectName});
+    </insert>
+
+    <update id="updateStudentAndSubjectState">
+        update t_studentmiddlesubject set ssm_fkstate = #{ssm_fkstate}
+        where ssm_connectStudent = #{u_id} and ssm_connectSubject = #{s_id}
+    </update>
+</mapper>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lv.aaa.dao.IUserDao">
+    <resultMap id="myUserMap" type="lv.aaa.entity.T_user">
+        <id column="u_id" property="u_id"/>
+        <result column="u_username" property="u_username"/>
+        <result column="u_password" property="u_password"/>
+    </resultMap>
+    <resultMap id="myEncapsulationDataMap" type="lv.aaa.util.EncapsulationData">
+        <id column="s_id" property="s_id"/>
+        <result column="u_username" property="u_username"/>
+        <result column="ssm_state" property="ssm_state"/>
+        <result column="s_limitDate" property="limitDateString"/>
+        <result column="s_generateDate" property="s_generateDate"/>
+        <result column="st_name" property="st_name"/>
+        <result column="s_subjectName" property="s_subjectName"/>
+        <result column="u_id" property="u_id"/>
+    </resultMap>
+    <select id="getUserByUsername" resultMap="myUserMap">
+        select u.u_id,u.u_username,u.u_password
+        from t_user u where u_username = #{username} and u_state = 0
+    </select>
+    <select id="getUserByClass" resultMap="myUserMap">
+        select u.* from t_user u
+        inner join t_classmiddlestudent cms on u.u_id = cms.t_cmsfkstudent
+        inner join t_class c on cms.t_cmsfkclass = c.c_id
+        where c.c_id = #{classId} and u.u_fkRole = 4
+    </select>
+    <!-- 建立学生和题目的关系 -->
+    <insert id="addStudentAndSubjectContact">
+        insert into t_studentmiddlesubject
+        (ssm_connectStudent,ssm_connectSubject,ssm_fkstate)
+        values(#{studentId},#{subjectId},1)
+    </insert>
+    <select id="getUserByClassAndSubject" resultMap="myEncapsulationDataMap">
+        select u.u_username,s.s_limitDate,s.s_generateDate,s.s_id,st.st_name,ss.state_id,ss.state_name,s.s_subjectName,u.u_id from t_user u
+        inner join t_studentmiddlesubject sms on u.u_id = sms.ssm_connectStudent
+        inner join t_subject s on s.s_id = sms.ssm_connectSubject
+        inner join t_subjecttype st on s.s_fksubjectType = st.st_id
+        inner join t_subjectstate ss on ss.state_id = sms.ssm_fkstate
+        where s.s_fkClass = #{classId}  and (s.s_generateDate &gt; #{beginDate} and s.s_generateDate &lt; #{endDate})
+        and s.s_fksubjectType = #{subjectTypeId}
+        <if test="likeName != null and likeName.length > 0">
+            and u.u_username like #{likeName}
+        </if>
+        <if test="state_id != null">
+            and ss.state_id = #{state_id}
+        </if>
+    </select>
+    
+    <select id="getTeacherBySubject" resultType="string">
+        select u_username from t_user where u_id = #{subjectId}
+    </select>
+
+</mapper>

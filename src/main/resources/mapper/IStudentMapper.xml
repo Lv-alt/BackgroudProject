@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lv.aaa.dao.IStudentDao">
+    <!-- 学生的信息封装结果集 -->
+    <resultMap id="myStudentEncapsulationDataMap" type="lv.aaa.util.EncapsulationData">
+        <result property="u_username" column="u_username"/>
+        <result property="state_id" column="state_id"/>
+        <result property="limitDateString" column="s_limitDate"/>
+        <result property="st_name" column="st_name"/>
+        <result property="s_generateDate" column="s_generateDate"/>
+        <result property="s_connectTeacher" column="s_connectTeacher"/>
+        <result property="state_name" column="state_name"/>
+        <result property="subjectId" column="s_id"/>
+        <result property="s_subjectUploadPath" column="s_subjectUploadPath"/>
+        <result property="s_subjectName" column="s_subjectName"/>
+        <result property="u_id" column="u_id"/>
+        <result property="ssm_fkstate" column="ssm_fkstate"/>
+    </resultMap>
+
+    <select id="getStudentInfoByStudentId" resultMap="myStudentEncapsulationDataMap">
+        select u.u_username,s.s_limitDate,st.st_name,s.s_generateDate,s.s_connectTeacher,ss.state_id,ss.state_name,s.s_id,s.s_subjectUploadPath,s.s_subjectName,sms.ssm_fkstate from t_user u
+        inner join t_studentmiddlesubject sms on u.u_id = sms.ssm_connectStudent
+        inner join t_subject s on sms.ssm_connectSubject = s.s_id
+        inner join t_subjecttype st on s.s_fksubjectType = st.st_id
+        inner join t_subjectstate ss on sms.ssm_fkstate = ss.state_id
+        where u.u_id = #{u_id} and (s.s_generateDate &gt; #{beginDate} and s.s_generateDate &lt; #{endDate})
+        and s.s_fksubjectType = #{subjectTypeId}
+    </select>
+
+    <update id="updateSubjectStateByStudent">
+        update t_studentmiddlesubject set ssm_fkstate = 2
+        where ssm_connectStudent = #{u_id} and ssm_connectSubject = #{subjectId}
+    </update>
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lv.aaa.dao.ISubjectStateDao">
+    <resultMap id="mySubjectStateMap" type="lv.aaa.util.EncapsulationData">
+        <id column="state_id" property="state_id"/>
+        <result column="state_name" property="state_name"/>
+    </resultMap>
+    <select id="getSubjectStates" resultMap="mySubjectStateMap">
+        select * from t_subjectstate
+    </select>
+</mapper>

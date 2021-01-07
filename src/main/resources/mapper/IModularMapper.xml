@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lv.aaa.dao.IModularDao">
+    <resultMap id="myModularMap" type="lv.aaa.entity.T_modular">
+        <id column="m_id" property="m_id"/>
+        <result column="m_name" property="m_name"/>
+        <result column="m_url" property="m_url"/>
+        <result column="m_lev" property="m_lev"/>
+        <result column="m_ename" property="m_ename"/>
+    </resultMap>
+
+    <select id="getOneModularByUserId" resultMap="myModularMap">
+        select m.* from t_user u
+        inner join t_role r on u.u_fkRole = r.r_id
+        inner join t_rolemiddlemodular mm on mm.t_connectRole = r.r_id
+        inner join t_modular m on mm.t_connectModular = m.m_id
+        where u.u_id = #{u_id} and m.m_lev = 1
+    </select>
+
+    <select id="getTwoModularByUserIdAndModularId" resultMap="myModularMap">
+        select m.* from t_user u
+        inner join t_role r on u.u_fkRole = r.r_id
+        inner join t_rolemiddlemodular mm on mm.t_connectRole = r.r_id
+        inner join t_modular m on mm.t_connectModular = m.m_id
+        where u.u_id = #{userId} and m.m_lev = 2 and m.m_pid = #{OneModularId}
+    </select>
+
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lv.aaa.dao.IClassDao">
+    <resultMap id="myClassMap" type="lv.aaa.entity.T_class">
+        <id property="c_id" column="c_id"/>
+        <result property="c_name" column="c_name"/>
+    </resultMap>
+    <select id="getClassByUser" resultMap="myClassMap">
+        select c.c_id,c.c_name from t_user u
+        inner join t_classmiddleteacher ct on ct.t_connectUser = u.u_id
+        inner join t_class c on c.c_id = ct.t_connectClass
+        where u.u_id = #{userId}
+    </select>
+</mapper>

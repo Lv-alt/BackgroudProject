@@ -1,0 +1,46 @@
+POST http://localhost:9999/login
+Accept: */*
+Cache-Control: no-cache
+
+{'username':'律维辰','password':'1234'}
+
+###
+
+POST http://localhost:9999/login
+Accept: */*
+Cache-Control: no-cache
+
+'{'username':'律维辰','password':'1234'}'
+
+###
+
+POST http://localhost:9999/login?username=律维辰&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:8080/login?username=律&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-12-29T100610.404.html
+
+###
+
+POST http://localhost:8080/login?username=律&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-12-29T100528.404.html
+
+###
+
+POST http://localhost:8080/test
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-12-29T100400.404.html
+
+###
+

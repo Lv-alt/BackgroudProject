@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lv.aaa.dao.ISubjectTypeDao">
+    <resultMap id="mySubjectTypeMap" type="lv.aaa.entity.T_SubjectType">
+        <id column="st_id" property="st_id"/>
+        <result column="st_name" property="st_name"/>
+    </resultMap>
+    <select id="getSubjectTypes" resultMap="mySubjectTypeMap">
+        select * from t_subjecttype
+    </select>
+</mapper>
