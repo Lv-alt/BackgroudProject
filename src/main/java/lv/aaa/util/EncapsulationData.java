@@ -34,5 +34,8 @@ public class EncapsulationData {
     private String state_name;
     private String s_subjectName;
     private String s_subjectUploadPath;
-
+    private String surplusDate;
+    private String studentUploadRemarks;
+    private String[] imagePaths;
+    private String ssm_studentUploadPath;
 }

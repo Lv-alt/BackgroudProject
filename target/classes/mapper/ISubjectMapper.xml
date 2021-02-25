@@ -25,4 +25,14 @@ values(#{limitDateString},#{teacherId},#{classId},now(),#{subjectTypeId},#{s_sub
         update t_studentmiddlesubject set ssm_fkstate = #{ssm_fkstate}
         where ssm_connectStudent = #{u_id} and ssm_connectSubject = #{s_id}
     </update>
+
+    <select id="getSurplusDate" resultType="string">
+        select ssm_remainingDate from t_studentmiddlesubject
+        where ssm_connectStudent = #{u_id} and ssm_connectSubject = #{subjectId}
+    </select>
+
+    <update id="updateSurplusDate">
+        update t_studentmiddlesubject set ssm_remainingDate = #{surplusDate}
+        where ssm_connectStudent = #{u_id} and ssm_connectSubject = #{subjectId}
+    </update>
 </mapper>

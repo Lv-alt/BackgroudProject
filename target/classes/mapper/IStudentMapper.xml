@@ -17,10 +17,13 @@
         <result property="s_subjectName" column="s_subjectName"/>
         <result property="u_id" column="u_id"/>
         <result property="ssm_fkstate" column="ssm_fkstate"/>
+        <result property="u_id" column="ssm_connectStudent"/>
+
     </resultMap>
 
     <select id="getStudentInfoByStudentId" resultMap="myStudentEncapsulationDataMap">
-        select u.u_username,s.s_limitDate,st.st_name,s.s_generateDate,s.s_connectTeacher,ss.state_id,ss.state_name,s.s_id,s.s_subjectUploadPath,s.s_subjectName,sms.ssm_fkstate from t_user u
+        select u.u_username,s.s_limitDate,st.st_name,s.s_generateDate,s.s_connectTeacher,ss.state_id,ss.state_name,s.s_id,s.s_subjectUploadPath,s.s_subjectName,sms.ssm_fkstate,sms.ssm_connectStudent
+        from t_user u
         inner join t_studentmiddlesubject sms on u.u_id = sms.ssm_connectStudent
         inner join t_subject s on sms.ssm_connectSubject = s.s_id
         inner join t_subjecttype st on s.s_fksubjectType = st.st_id
@@ -33,4 +36,26 @@
         update t_studentmiddlesubject set ssm_fkstate = 2
         where ssm_connectStudent = #{u_id} and ssm_connectSubject = #{subjectId}
     </update>
+
+    <select id="getStudentUploadPath" resultType="string">
+        select ssm_studentUploadPath from t_studentmiddlesubject
+        where ssm_connectsubject = #{subjectId} and ssm_connectstudent = #{u_id}
+    </select>
+
+    <update id="addStudentUploadPath">
+        update t_studentmiddlesubject set ssm_studentUploadPath = #{s_subjectUploadPath}
+        where ssm_connectsubject = #{subjectId} and ssm_connectstudent = #{u_id}
+    </update>
+
+    <update id="addStudentUploadRemarks">
+        update t_studentmiddlesubject set
+        ssm_studentUploadRemarks = #{studentUploadRemarks},
+        ssm_fkstate = 2,ssm_remainingDate = '00:00:00'
+where ssm_connectsubject = #{subjectId} and ssm_connectstudent = #{u_id}
+    </update>
+
+    <select id="getSubjectByStudent" resultType="lv.aaa.util.EncapsulationData">
+        select ssm_studentUploadPath,ssm_studentUploadRemarks studentUploadRemarks from t_studentmiddlesubject
+        where ssm_connectsubject = #{subjectId} and ssm_connectstudent = #{u_id}
+    </select>
 </mapper>

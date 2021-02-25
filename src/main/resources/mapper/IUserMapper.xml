@@ -8,6 +8,12 @@
         <result column="u_username" property="u_username"/>
         <result column="u_password" property="u_password"/>
     </resultMap>
+    <resultMap id="myUserInfo" type="lv.aaa.entity.T_user">
+        <id column="u_id" property="u_id"/>
+        <result column="u_username" property="u_username"/>
+        <result column="u_password" property="u_password"/>
+        <result column="u_headUrl" property="u_headUrl"/>
+    </resultMap>
     <resultMap id="myEncapsulationDataMap" type="lv.aaa.util.EncapsulationData">
         <id column="s_id" property="s_id"/>
         <result column="u_username" property="u_username"/>
@@ -53,5 +59,21 @@
     <select id="getTeacherBySubject" resultType="string">
         select u_username from t_user where u_id = #{subjectId}
     </select>
+
+    <insert id="addStudentAndSubjectContactBySubject">
+        insert into t_studentmiddlesubject
+        (ssm_connectStudent,ssm_connectSubject,ssm_fkstate,ssm_remainingDate)
+        values(#{u_id},#{subjectId},1,#{limitDateString})
+    </insert>
+
+    <select id="getUserByUserId" resultMap="myUserInfo">
+        select u.u_id,u.u_username,u.u_password,u.u_headUrl
+        from t_user u where u_id = #{userId} and u_state = 0
+    </select>
+
+    <update id="uploadHeadPath">
+        update t_user set u_headUrl = #{u_headUrl}
+        where u_id = #{u_id}
+    </update>
 
 </mapper>

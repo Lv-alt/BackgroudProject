@@ -55,4 +55,58 @@ public class IStudentServiceImpl implements IStudentService {
         }
         return null;
     }
+
+    /*
+    * 添加学生的上传路径
+    * */
+    @Override
+    public CommonResult addStudentUploadPath(EncapsulationData encapsulationData) {
+        String  sumPath = "";
+        String fileUploadPath = "http://localhost:8888/img/";
+        //先查询出之前的上传路径，
+        String oldFileUploadPath = studentDao.getStudentUploadPath(encapsulationData);
+        if(oldFileUploadPath != null){
+            String newFileUploadPath = encapsulationData.getS_subjectUploadPath();
+            //在该文件上传之前可能还有其他的文件上传了，
+            //拼接多文件路径。，用 ；号隔开
+            sumPath = oldFileUploadPath + (fileUploadPath + newFileUploadPath);
+        }else{
+            sumPath = fileUploadPath + encapsulationData.getS_subjectUploadPath();
+        }
+
+        //修改文件上传路径
+        encapsulationData.setS_subjectUploadPath(sumPath);
+        boolean result = studentDao.addStudentUploadPath(encapsulationData);
+        return new CommonResult(1,"成功",result);
+    }
+
+    /*
+    * 添加学生上传作业的备注
+    * */
+    @Override
+    public CommonResult addStudentUploadRemarks(EncapsulationData encapsulationData) {
+        //因为上传作业备注的时候
+        //该学生的作业肯定已经完成了，
+        //所以修改该学生对应的该作业的状态为待批改，剩余时间为00：00：00
+        boolean result = studentDao.addStudentUploadRemarks(encapsulationData);
+        if(result){
+            //
+            return new CommonResult(1,"成功",result);
+        }
+        return null;
+    }
+
+    /*
+    * 根据学生查询出该学生的上传的路径
+    * */
+    @Override
+    public CommonResult getSubjectByStudent(EncapsulationData encapsulationData) {
+        //查询出该学生上传的图片的路径
+        EncapsulationData subjectByStudent = studentDao.getSubjectByStudent(encapsulationData);
+
+        String[] imagePath = subjectByStudent.getSsm_studentUploadPath().split(";");
+        subjectByStudent.setImagePaths(imagePath);
+        return new CommonResult(1,"成功",subjectByStudent);
+    }
+
 }

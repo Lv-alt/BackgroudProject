@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lv.aaa.dao.IPostTableDao">
+    <resultMap id="myPostTableMap" type="lv.aaa.entity.T_PostTable">
+        <id column="p_id" property="p_id"/>
+        <result column="p_postTitle" property="p_postTitle"/>
+        <result column="p_content" property="p_content"/>
+        <result column="p_generate" property="p_generate"/>
+        <result column="p_contentPath" property="p_contentPath"/>
+        <result column="p_fabulousCount" property="p_fabulousCount"/>
+        <association property="user" javaType="lv.aaa.entity.T_user">
+            <result property="u_username" column="u_username"/>
+            <result property="u_headUrl" column="u_headUrl"/>
+        </association>
+        <association property="postType" javaType="lv.aaa.entity.T_PostType">
+            <result property="pt_name" column="pt_name"/>
+        </association>
+    </resultMap>
+
+    <select id="getPostTables" resultMap="myPostTableMap">
+        select pt.`*`,u.u_username from t_posttable pt
+        inner join t_user u on pt.p_fkuser = u.u_id
+        where pt.p_state = 0
+        ORDER BY pt.p_generate asc
+    </select>
+
+    <insert id="generatePost" useGeneratedKeys="true" keyProperty="p_id">
+        insert into t_posttable(p_generate,p_fkuser,p_contentPath)
+        values(now(),#{user.u_id},#{p_contentPath})
+    </insert>
+
+    <update id="updatePostContent">
+        update t_posttable set p_content = #{p_content},p_postTitle = #{p_postTitle}
+        where p_id = #{p_id}
+    </update>
+
+    <insert id="generatePostNoImage" keyProperty="p_id" useGeneratedKeys="true">
+        insert into t_posttable(p_content,p_generate,p_fkuser)
+        values(#{p_content},now(),#{user.u_id})
+    </insert>
+
+    <select id="getPostTableByPostId" resultMap="myPostTableMap">
+        select pt.`*`,u.u_username,u.u_headUrl from t_posttable pt
+        inner join t_user u on pt.p_fkuser = u.u_id
+        where pt.p_id = #{postId}
+    </select>
+
+    <update id="updatePostImgPathByPostId">
+        update t_posttable set p_contentPath = #{p_contentPath}
+        where p_id = #{p_id}
+    </update>
+
+    <insert id="addFabulousCount">
+        update t_posttable set p_fabulousCount = p_fabulousCount+1
+        where p_id = #{p_id}
+    </insert>
+
+    <select id="getPostByUser" resultMap="myPostTableMap">
+        select pt.`*`,u.u_username from t_posttable pt
+        inner join t_user u on pt.p_fkuser = u.u_id
+        where pt.p_fkuser = #{u_id} and pt.p_state = 0
+        ORDER BY pt.p_generate asc
+    </select>
+
+    <update id="deletePostByPostId">
+        update t_posttable set p_state = 1 where p_id = #{p_id}
+    </update>
+
+</mapper>

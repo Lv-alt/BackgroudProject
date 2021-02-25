@@ -1,21 +1,26 @@
 package lv.aaa.controller;
 
 import com.sun.deploy.net.HttpResponse;
+import lv.aaa.entity.T_user;
 import lv.aaa.service.ISubjectService;
 import lv.aaa.util.CommonResult;
 import lv.aaa.util.EncapsulationData;
+import lv.aaa.util.Lv_Encapsulation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 /*
@@ -25,44 +30,24 @@ import java.util.UUID;
 @RequestMapping("/Subject")
 public class SubjectController {
 
-    private final static String filePath = "F:\\Upload\\";
 
     @Autowired
     ISubjectService subjectService;
+
+    @Autowired
+    Lv_Encapsulation lv_encapsulation;
 
     /*
     * 该方法用来做文件上传
     * */
     @RequestMapping("/uploadSubject")
     public CommonResult uploadSubject(@RequestParam("file") MultipartFile file){
-        //获取上传的文件名
-        String fileName = file.getOriginalFilename();
-        //获取后缀
-        String suffixName = fileName.substring(fileName.lastIndexOf("."));
-        //生成新的文件名
-        String newfileName = UUID.randomUUID()+suffixName;
-        //创建一个File用来判断文件夹是否存在
-        File file1 = new File("F:\\Upload");
-        //创建文件资源
-        File dest = new File(filePath+newfileName);
-
-        try {
-            if(file1.exists()){
-                //写入到指定路径
-                file.transferTo(dest);
-            }else{
-                file1.mkdirs();
-                //写入到指定路径
-                file.transferTo(dest);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Map<String, String> map = lv_encapsulation.uploadFileMethod(file);
         //拼接文件上传路径
-        String fileUploadPath = filePath + newfileName;
+        String fileUploadPath = map.get("filePath") + map.get("newfileName");
         //上传完题目之后把题目名称，路径存放路径 存到数据库 生成一条数据库记录
         EncapsulationData encapsulationData = new EncapsulationData();
-        encapsulationData.setS_subjectName(fileName);
+        encapsulationData.setS_subjectName(map.get("fileName"));
         encapsulationData.setS_subjectUploadPath(fileUploadPath);
         CommonResult commonResult = subjectService.generateSubject(encapsulationData);
         return commonResult;
@@ -100,4 +85,27 @@ public class SubjectController {
     public CommonResult updateStudentAndSubjectState(@RequestBody EncapsulationData encapsulationData){
         return subjectService.updateStudentAndSubjectState(encapsulationData);
     }
+
+    /*
+    *  开始 ⏲
+    * */
+    @PostMapping("/beginTimer")
+    public CommonResult beginTimer(@RequestBody EncapsulationData encapsulationData) throws ParseException {
+        //根据学生id and 题目id查询出该学生对应的这个题目的剩余时间
+        //调用更新剩余时间方法
+        subjectService.updateSurplusDate(encapsulationData);
+        //返回结果
+        return new CommonResult(1,"成功","开始计时了");
+    }
+    /*
+    * 获取剩余时间
+    * */
+    @PostMapping("/getSurplusDate")
+    public CommonResult getSurplusDate(@RequestBody EncapsulationData encapsulationData){
+        CommonResult surplusDate = subjectService.getSurplusDate(encapsulationData);
+        return surplusDate;
+    }
+
+
+
 }
