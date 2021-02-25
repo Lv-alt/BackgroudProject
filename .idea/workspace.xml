@@ -1,58 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="204d5ca3-9cdf-4aba-a525-c838f8163340" name="Default Changelist" comment="Lv 删除了类">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/controller/CommentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/controller/PostTableController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/dao/ICommentTableDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/dao/IPostTableDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/entity/T_PostTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/entity/T_PostType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/entity/T_commentTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/service/ICommentTableService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/service/IPostTableService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/ICommentTableServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/IPostTableServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ICommentTableMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/IPostTableMapper.xml" afterDir="false" />
+    <list default="true" id="204d5ca3-9cdf-4aba-a525-c838f8163340" name="Default Changelist" comment="Lv——添加了许多类">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/conf/SecurityConf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/conf/SecurityConf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/controller/SubjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/controller/SubjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/dao/IStudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/dao/IStudentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/dao/ISubjectDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/dao/ISubjectDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/dao/IUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/dao/IUserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/entity/T_user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/entity/T_user.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/service/IStudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/service/IStudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/service/ISubjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/service/ISubjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/IStudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/IStudentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/ISubjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/ISubjectServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/IUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/serviceimpl/IUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/util/EncapsulationData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/util/EncapsulationData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lv/aaa/util/Lv_Encapsulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lv/aaa/util/Lv_Encapsulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/IStudentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/IStudentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ISubjectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ISubjectMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/IUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/IUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lv/aaa/controller/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lv/aaa/controller/StudentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lv/aaa/controller/SubjectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lv/aaa/controller/SubjectController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lv/aaa/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lv/aaa/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lv/aaa/dao/IStudentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lv/aaa/dao/IStudentDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lv/aaa/dao/ISubjectDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lv/aaa/dao/ISubjectDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lv/aaa/dao/IUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lv/aaa/dao/IUserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lv/aaa/entity/T_user.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lv/aaa/entity/T_user.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lv/aaa/service/IStudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lv/aaa/service/IStudentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lv/aaa/service/ISubjectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lv/aaa/service/ISubjectService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lv/aaa/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lv/aaa/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lv/aaa/serviceimpl/IStudentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lv/aaa/serviceimpl/IStudentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lv/aaa/serviceimpl/ISubjectServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lv/aaa/serviceimpl/ISubjectServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lv/aaa/serviceimpl/IUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lv/aaa/serviceimpl/IUserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lv/aaa/util/EncapsulationData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lv/aaa/util/EncapsulationData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lv/aaa/util/Lv_Encapsulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lv/aaa/util/Lv_Encapsulation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/IStudentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/IStudentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ISubjectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ISubjectMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/IUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/IUserMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lv/aaa/controller/PostTableController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+            <state relative-caret-position="2310">
+              <caret line="78" selection-start-line="78" selection-end-line="78" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#806#807#0" expanded="true" />
@@ -99,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/IPostTableMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+            <state relative-caret-position="210">
+              <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -223,7 +173,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -304,6 +253,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -313,10 +263,10 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1614212857309" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1614214961214" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -407,7 +357,8 @@
       <workItem from="1611637038349" duration="40733000" />
       <workItem from="1613705203616" duration="4093000" />
       <workItem from="1613797273844" duration="31440000" />
-      <workItem from="1614146021682" duration="6969000" />
+      <workItem from="1614146021682" duration="8090000" />
+      <workItem from="1614214034066" duration="897000" />
     </task>
     <task id="LOCAL-00001" summary="测试加入进去的代码">
       <created>1609983206554</created>
@@ -437,11 +388,18 @@
       <option name="project" value="LOCAL" />
       <updated>1609989341259</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Lv——添加了许多类">
+      <created>1614212923878</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1614212923878</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193133000" />
+    <option name="totallyTimeSpent" value="195151000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -454,11 +412,11 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.20527859" visible="true" weight="0.24307692" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.20527859" visible="true" weight="0.24923077" />
       <window_info anchor="bottom" id="REST Client" order="0" weight="0.533101" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3292683" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49846154" visible="true" weight="0.4860627" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49846154" weight="0.1445993" />
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49846154" weight="0.34146342" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -525,7 +483,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="测试加入进去的代码" />
     <MESSAGE value="Lv 删除了类" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lv 删除了类" />
+    <MESSAGE value="Lv——添加了许多类" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lv——添加了许多类" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -923,13 +882,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/我想测试一下带图片的帖子-.url">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/我想测试一下带图片的帖子-.url" />
     <entry file="file://$PROJECT_DIR$/src/main/java/lv/aaa/entity/T_PostTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -982,8 +935,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lv/aaa/controller/PostTableController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+        <state relative-caret-position="2310">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#806#807#0" expanded="true" />
@@ -994,8 +947,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/IPostTableMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+        <state relative-caret-position="210">
+          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
         </state>
       </provider>
     </entry>
