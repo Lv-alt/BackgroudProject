@@ -41,5 +41,19 @@ public class CommentController {
         return commentTableService.addTwoReply(commentTable);
     }
 
+    /*
+    * 根据用户查询出该用户所发表过的所有评论
+    * */
+    @PostMapping("/getCommentByUser")
+    public CommonResult getCommentByUser(){
+        T_user user = (T_user) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return commentTableService.getCommentByUser(user);
+    }
+
+    @PostMapping("/deleteComment")
+    public CommonResult deleteComment(@RequestBody T_commentTable commentTable){
+        return commentTableService.deleteComment(commentTable);
+    }
+
 
 }

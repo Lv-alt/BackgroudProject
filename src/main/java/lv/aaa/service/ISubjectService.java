@@ -21,4 +21,7 @@ public interface ISubjectService {
     void updateSurplusDate(EncapsulationData encapsulationData) throws ParseException;
 
     CommonResult getSurplusDate(EncapsulationData encapsulationData);
+
+    //根据班级查询出该班级在当天是否已经布置过作业
+    CommonResult getSubjectByClassAndDate(Integer classId);
 }

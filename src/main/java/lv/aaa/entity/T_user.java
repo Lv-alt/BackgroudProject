@@ -18,6 +18,7 @@ public class T_user implements UserDetails {
     private Integer u_state;
     private Collection<? extends GrantedAuthority> collection;
     private String u_headUrl;
+    private T_role role;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

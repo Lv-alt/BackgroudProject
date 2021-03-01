@@ -9,4 +9,6 @@ import java.util.List;
 public interface IClassService {
     //根据用户查询出该用户对应的班级
     CommonResult getClassByUser(T_user user);
+
+
 }

@@ -23,4 +23,8 @@ public class T_commentTable {
     private List<T_commentTable> twoCommentTables;//一级评论下的二级评论
     private Integer c_pid;
     private String generateDateFormat;
+    private Integer c_fkPost;
+    //二级评论回复的一级的评论
+    private T_commentTable twoCommentReplyOneComment;
+
 }

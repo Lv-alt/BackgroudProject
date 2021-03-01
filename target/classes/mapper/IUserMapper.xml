@@ -13,6 +13,10 @@
         <result column="u_username" property="u_username"/>
         <result column="u_password" property="u_password"/>
         <result column="u_headUrl" property="u_headUrl"/>
+        <association property="role" javaType="lv.aaa.entity.T_role">
+            <id column="r_id" property="r_id"/>
+            <result column="r_name" property="r_name"/>
+        </association>
     </resultMap>
     <resultMap id="myEncapsulationDataMap" type="lv.aaa.util.EncapsulationData">
         <id column="s_id" property="s_id"/>
@@ -67,8 +71,11 @@
     </insert>
 
     <select id="getUserByUserId" resultMap="myUserInfo">
-        select u.u_id,u.u_username,u.u_password,u.u_headUrl
-        from t_user u where u_id = #{userId} and u_state = 0
+        select u.u_id,u.u_username,u.u_password,u.u_headUrl,r.*
+        from t_user u
+		  inner join t_role r
+		  on u.u_fkRole = r.r_id
+		  where u_id = #{userId} and u_state = 0
     </select>
 
     <update id="uploadHeadPath">

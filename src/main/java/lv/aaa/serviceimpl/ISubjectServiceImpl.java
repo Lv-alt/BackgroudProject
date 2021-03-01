@@ -139,6 +139,15 @@ public class ISubjectServiceImpl implements ISubjectService {
         return new CommonResult(1,"成功",surplusDate);
     }
 
+    @Override
+    public CommonResult getSubjectByClassAndDate(Integer classId) {
+        Integer count = subjectDao.getSubjectByClassAndDate(classId);
+        if(count >0){
+            return new CommonResult(1,"成功",count);
+        }
+        return null;
+    }
+
     //来个递减的方法，开启一个线程每秒更新一次数据
     public void decreasingDate(long timeStamp,EncapsulationData encapsulationData){
         //使用这种方式 该方式应该出不了栈，所以前台会一直等待这个方法执行完毕

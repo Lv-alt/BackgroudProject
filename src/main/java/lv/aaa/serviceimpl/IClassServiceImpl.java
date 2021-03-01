@@ -24,4 +24,6 @@ public class IClassServiceImpl implements IClassService {
         List<T_class> classes = classDao.getClassByUser(user.getU_id());
         return new CommonResult(1,"成功",classes);
     }
+
+
 }

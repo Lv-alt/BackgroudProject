@@ -53,4 +53,11 @@ public class UserController {
         return userService.uploadHeadPath(user);
     }
 
+    @PostMapping("/getUserByUserId")
+    public CommonResult getUserByUserId(){
+        //获取到登陆的用户
+        T_user user = (T_user) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return userService.getUserByUserId(user.getU_id());
+    }
+
 }

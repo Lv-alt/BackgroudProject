@@ -106,6 +106,10 @@ public class SubjectController {
         return surplusDate;
     }
 
+    @PostMapping("/getSubjectByClassAndDate")
+    public CommonResult getSubjectByClassAndDate(@RequestBody EncapsulationData encapsulationData){
+        return subjectService.getSubjectByClassAndDate(encapsulationData.getClassId())   ;
+    }
 
 
 }

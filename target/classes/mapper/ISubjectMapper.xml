@@ -35,4 +35,10 @@ values(#{limitDateString},#{teacherId},#{classId},now(),#{subjectTypeId},#{s_sub
         update t_studentmiddlesubject set ssm_remainingDate = #{surplusDate}
         where ssm_connectStudent = #{u_id} and ssm_connectSubject = #{subjectId}
     </update>
+    
+    <select id="getSubjectByClassAndDate" resultType="int">
+        select count(*) from t_subject where s_fksubjectType = 3
+        and to_days(s_generateDate) =  to_days(now())
+        and s_fkClass = #{classId};
+    </select>
 </mapper>

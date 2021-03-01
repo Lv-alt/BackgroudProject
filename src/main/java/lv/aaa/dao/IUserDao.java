@@ -36,4 +36,6 @@ public interface IUserDao {
     //上传用户头像的路径
     boolean uploadHeadPath(T_user user);
 
+
+
 }

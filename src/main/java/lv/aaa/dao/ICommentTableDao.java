@@ -1,6 +1,7 @@
 package lv.aaa.dao;
 
 import lv.aaa.entity.T_commentTable;
+import lv.aaa.entity.T_user;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -24,4 +25,13 @@ public interface ICommentTableDao {
 
     //添加二级回复
     boolean addTwoReply(T_commentTable commentTable);
+
+    //根据用户查询出该用户所发表过的所有评论
+    List<T_commentTable> getCommentByUser(T_user user);
+
+    //根据评论id查询出该id对应的评论
+    T_commentTable getCommentTableByCommentId(Integer commentId);
+
+    //删除评论（修改评论状态)
+    boolean deleteComment(T_commentTable commentTable);
 }

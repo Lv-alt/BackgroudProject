@@ -25,5 +25,6 @@ public interface ISubjectDao {
     //更新剩余时间
     boolean updateSurplusDate(EncapsulationData encapsulationData);
 
-    //查询出剩余时间
+    //根据班级查询出该班级在当天是否已经布置过作业
+    Integer getSubjectByClassAndDate(Integer classId);
 }

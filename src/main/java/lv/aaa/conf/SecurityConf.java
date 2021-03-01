@@ -1,6 +1,7 @@
 package lv.aaa.conf;
 
 import com.google.gson.Gson;
+import lv.aaa.dao.IUserDao;
 import lv.aaa.entity.T_user;
 import lv.aaa.filter.JwtAuthorizationTokenFilter;
 import lv.aaa.filter.MyUsernamePasswordAuthenticationFilter;
@@ -24,6 +25,7 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -44,6 +46,9 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 
     @Autowired
     JwtAuthorizationTokenFilter wwtAuthorizationTokenFilter;
+
+    @Resource
+    IUserDao userDao;
 
     // 配置使用自己的数据库账号密码验证
     @Override
@@ -79,6 +84,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
                 response.setHeader("Content-Type","application/json;charset=UTF-8");
                 PrintWriter writer = response.getWriter();
                 CommonResult defaultMsg = new CommonResult();
+                defaultMsg.setCode(500);
                 defaultMsg.setMessage("用户名或者密码错误");
                 String json =  new Gson().toJson(defaultMsg);
                 writer.print(json);
@@ -95,6 +101,7 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 // 把wwtAuthorizationTokenFilter过滤器加到UsernamePasswordAuthenticationFilter过滤器之前
         http.addFilterAt(wwtAuthorizationTokenFilter, UsernamePasswordAuthenticationFilter.class);
         http.addFilterBefore(this.getMyUsernamePasswordAuthenticationFilter(),UsernamePasswordAuthenticationFilter.class);
+
         //禁用session
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         //把现在我们自己生成的MyUsernamePasswordAuthenticationFilter替代原先的过滤器
@@ -114,6 +121,20 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
                 writer.print(result);
                 writer.close();
             }
+        });
+        //退出登陆返回json
+        http.logout().logoutSuccessHandler((request,response,authentication) ->  {
+            CommonResult commonResult = null;
+                commonResult = new CommonResult(200,"退出成功",null);
+
+            response.setCharacterEncoding("utf-8");
+            response.setHeader("Content-type","application/json;charset=utf-8");
+            PrintWriter out = response.getWriter();
+            Gson gson = new Gson();
+            String result = gson.toJson(commonResult);
+            out.print(result);
+            out.flush();
+            out.close();
         });
         //关闭防范跨域请求伪造的代码
         http.csrf().disable();

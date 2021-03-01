@@ -12,4 +12,7 @@ public interface IUserService {
 
     //上传用户头像的路径
     CommonResult uploadHeadPath(T_user user);
+
+    //根据用户id查询出用户信息
+    CommonResult getUserByUserId(Integer userId);
 }

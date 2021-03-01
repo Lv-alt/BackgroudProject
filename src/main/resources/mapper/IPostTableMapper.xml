@@ -23,12 +23,12 @@
         select pt.`*`,u.u_username from t_posttable pt
         inner join t_user u on pt.p_fkuser = u.u_id
         where pt.p_state = 0
-        ORDER BY pt.p_generate asc
+        ORDER BY pt.p_generate desc
     </select>
 
     <insert id="generatePost" useGeneratedKeys="true" keyProperty="p_id">
-        insert into t_posttable(p_generate,p_fkuser,p_contentPath)
-        values(now(),#{user.u_id},#{p_contentPath})
+        insert into t_posttable(p_generate,p_fkuser,p_contentPath,p_state)
+        values(now(),#{user.u_id},#{p_contentPath},0)
     </insert>
 
     <update id="updatePostContent">
@@ -44,7 +44,7 @@
     <select id="getPostTableByPostId" resultMap="myPostTableMap">
         select pt.`*`,u.u_username,u.u_headUrl from t_posttable pt
         inner join t_user u on pt.p_fkuser = u.u_id
-        where pt.p_id = #{postId}
+        where pt.p_id = #{postId} and p_state = 0
     </select>
 
     <update id="updatePostImgPathByPostId">
