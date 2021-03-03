@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lv.GXK.com.aaa.dao.ClsDao">
+
+    <!--查询全部商品信息-->
+    <select id="getGoodsInfo" resultType="lv.GXK.com.aaa.entity.Cls">
+        select * from t_goodstable b inner join t_goodstype t on b.gt_fkGoodsType=t.gtype_id
+    </select>
+
+    <!--查询全部商品类别信息-->
+    <resultMap id="typeMap" type="lv.GXK.com.aaa.entity.Cls">
+        <id column="gtype_id" property="gtype_id"></id>
+        <result column="gtype_name" property="gtype_name"></result>
+    </resultMap>
+    <select id="getGoodsType" resultMap="typeMap">
+        select * from t_goodstype
+    </select>
+    <!--上传商品信息-->
+    <insert id="addGoodsinfo">
+        insert into t_goodstable values(null ,#{gt_name},#{gt_price},#{gtype_id},now(),1,1,#{gt_introduce})
+    </insert>
+
+    <insert id="generateGoodsInfo" useGeneratedKeys="true" keyProperty="c_id">
+        insert into t_goodstable(gt_generate,gt_state,img)
+        values(now(),1,#{img})
+    </insert>
+
+    <!--根据id修改上传图像的商品信息-->
+    <update id="upGoodsInfo">
+        update t_goodstable set
+        gt_name= #{gt_name} , gt_price=#{gt_price} , gt_fkGoodsType = #{gtype_id} ,gt_fkuser = 1 , gt_introduce=#{gt_introduce}  where gt_id=#{gt_id}
+    </update>
+
+    <!--查询所有教员信息-->
+    <resultMap id="jmap" type="lv.GXK.com.aaa.entity.Cls">
+        <id column="u_id" property="u_id"></id>
+        <result column="u_username" property="u_username"></result>
+        <result column="r_name" property="r_name"></result>
+    </resultMap>
+    <select id="getJTeacher" resultMap="jmap">
+      select u_id,u_username,r_name from t_user u inner join t_role r  on u.u_fkRole=r.r_id where u_fkRole=2
+    </select>
+
+    <!--查询所有班主任信息-->
+    <resultMap id="bmap" type="lv.GXK.com.aaa.entity.Cls">
+        <id column="u_id" property="u_id"></id>
+        <result column="u_username" property="u_username"></result>
+        <result column="r_name" property="r_name"></result>
+    </resultMap>
+    <select id="getBTeacher" resultMap="bmap">
+         select u_id,u_username,r_name from t_user u inner join t_role r  on u.u_fkRole=r.r_id where u_fkRole=3
+    </select>
+
+    <!--查询所有班级信息-->
+    <resultMap id="cmap" type="lv.GXK.com.aaa.entity.Cls">
+
+    </resultMap>
+    <select id="getClassInfo" resultMap="cmap">
+        select c.c_id,c.c_name,u.u_username,r.r_name from t_class c
+        inner join t_classmiddleteacher m on c.c_id = m.t_connectClass
+        inner join t_user u on m.t_connectUser = u.u_fkRole
+        inner join t_role r on u.u_fkRole = r.r_id
+    </select>
+
+    <!--根据id删除教员信息-->
+    <delete id="delJTeacher">
+        delete from t_user where u_id = #{u_id}
+    </delete>
+
+    <!--修改教员信息-->
+    <update id="upJTeacher" >
+        	update t_user set u_username = #{u_username} ,u_password = #{u_password} , u_fkRole = #{r_id}  where u_id = #{u_id}
+    </update>
+
+    <!--查询所有角色信息-->
+    <select id="getRole" resultType="lv.GXK.com.aaa.entity.Cls">
+        select * from t_role
+    </select>
+</mapper>

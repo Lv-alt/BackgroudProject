@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lv.GXK.com.aaa.dao.ClsDao">
+
+    <!--查询全部班级信息-->
+    <resultMap id="getCls" type="lv.GXK.com.aaa.entity.Cls">
+        <id column="c_id" property="c_id"></id>
+        <result column="c_name" property="c_name"></result>
+    </resultMap>
+    <select id="getCls"  resultMap="getCls">
+    select * from t_class
+    </select>
+    <!--添加教员信息-->
+    <insert id="addTeacher">
+     insert into t_user values(null ,#{u_username},#{u_password},0,2);
+    </insert>
+    <!--添加班级-->
+    <insert id="addClass">
+        insert into t_classmiddleteacher values(null ,#{t_connectClass},2)
+    </insert>
+    <!--添加班主任信息-->
+    <insert id="addCTeacher">
+       insert into t_user values(null ,#{u_username},#{u_password},0,3);
+    </insert>
+
+    <!--添加班主任班级信息-->
+    <insert id="addCClass">
+         insert into t_classmiddleteacher values(null ,#{t_connectClass},3)
+    </insert>
+
+
+    <!--查询所有班主任信息-->
+    <select id="getCTeacher" resultType="map">
+    select * from t_user where u_fkRole = 3
+    </select>
+    <!--查询所有教员信息-->
+    <select id="getTeacher" resultType="map">
+       select * from t_user where u_fkRole = 2
+    </select>
+    
+    <!--添加班级班主任信息-->
+    <insert id="addCTea">
+        insert into t_classmiddleteacher values(null ,#{t_connectClass},#{t_connectUser})
+    </insert>
+    <!--添加班级教员信息-->
+    <insert id="addTea">
+         insert into t_classmiddleteacher values(null ,#{t_connectClass},#{t_connectUser})
+    </insert>
+
+</mapper>
