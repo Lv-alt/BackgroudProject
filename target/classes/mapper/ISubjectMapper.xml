@@ -25,4 +25,20 @@ values(#{limitDateString},#{teacherId},#{classId},now(),#{subjectTypeId},#{s_sub
         update t_studentmiddlesubject set ssm_fkstate = #{ssm_fkstate}
         where ssm_connectStudent = #{u_id} and ssm_connectSubject = #{s_id}
     </update>
+
+    <select id="getSurplusDate" resultType="string">
+        select ssm_remainingDate from t_studentmiddlesubject
+        where ssm_connectStudent = #{u_id} and ssm_connectSubject = #{subjectId}
+    </select>
+
+    <update id="updateSurplusDate">
+        update t_studentmiddlesubject set ssm_remainingDate = #{surplusDate}
+        where ssm_connectStudent = #{u_id} and ssm_connectSubject = #{subjectId}
+    </update>
+    
+    <select id="getSubjectByClassAndDate" resultType="int">
+        select count(*) from t_subject where s_fksubjectType = 3
+        and to_days(s_generateDate) =  to_days(now())
+        and s_fkClass = #{classId};
+    </select>
 </mapper>

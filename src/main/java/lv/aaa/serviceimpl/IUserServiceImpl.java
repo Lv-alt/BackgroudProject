@@ -44,4 +44,23 @@ public class IUserServiceImpl implements IUserService {
         return new CommonResult(1,"成功",pageInfo);
     }
 
+
+    @Override
+    public CommonResult uploadHeadPath(T_user user) {
+        boolean result = userDao.uploadHeadPath(user);
+        if(result){
+            return new CommonResult(1,"成功",result);
+        }
+        return null;
+    }
+
+    @Override
+    public CommonResult getUserByUserId(Integer userId) {
+        T_user user = userDao.getUserByUserId(userId);
+        if(user != null){
+            return new CommonResult(1,"成功",user);
+        }
+        return null;
+    }
+
 }

@@ -17,6 +17,8 @@ public class T_user implements UserDetails {
     private T_modular t_modular;
     private Integer u_state;
     private Collection<? extends GrantedAuthority> collection;
+    private String u_headUrl;
+    private T_role role;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -52,4 +54,5 @@ public class T_user implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
 }

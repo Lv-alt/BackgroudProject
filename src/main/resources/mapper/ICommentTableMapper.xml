@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lv.aaa.dao.ICommentTableDao">
+    <resultMap id="myCommentTableMap" type="lv.aaa.entity.T_commentTable">
+        <id column="c_id" property="c_id"/>
+        <result column="c_content" property="c_content"/>
+        <result column="c_generate" property="c_generate"/>
+        <result column="c_commentImagePath" property="c_commentImagePath"/>
+        <result column="c_state" property="c_state"/>
+        <result column="c_replyPerson" property="c_replyPerson"/>
+        <result column="c_pid" property="c_pid"/>
+        <result column="c_fkPost" property="c_fkPost"/>
+        <association property="user" javaType="lv.aaa.entity.T_user">
+            <id property="u_id" column="u_id"/>
+            <result property="u_username" column="u_username"/>
+            <result property="u_headUrl" column="u_headUrl"/>
+        </association>
+    </resultMap>
+
+    <select id="getCommentTablesByPostId" resultMap="myCommentTableMap">
+        select * from t_commenttable ct
+        inner join t_posttable pt on ct.c_fkPost = pt.p_id
+        inner join t_user u on ct.c_fkuser = u.u_id
+        where pt.p_id = #{postId} and ct.c_state = 0 and c_deleteState = 0
+        ORDER BY ct.c_generate desc
+    </select>
+
+    <insert id="addComment">
+        insert into t_commenttable(c_content,c_generate,c_fkpost,c_fkuser,c_state)
+        values (#{c_content},now(),#{p_id},#{user.u_id},0)
+    </insert>
+
+    <insert id="addReply">
+        insert into
+        t_commenttable(c_content,c_generate,c_fkpost,c_fkuser,c_state,c_pid)
+        values (#{c_content},now(),#{p_id},#{user.u_id},1,#{c_pid})
+    </insert>
+
+    <select id="getTwoCommentByOneComment" resultMap="myCommentTableMap">
+        select * from t_commenttable ct
+        inner join t_posttable pt on ct.c_fkPost = pt.p_id
+        inner join t_user u on ct.c_fkuser = u.u_id
+        where pt.p_id = #{postId} and (ct.c_state = 1 or ct.c_state = 2)
+        and c_pid = #{OneCommentId} and c_deleteState = 0
+        ORDER BY ct.c_generate desc
+    </select>
+
+    <insert id="addTwoReply">
+        insert into t_commenttable(c_content,c_generate,c_fkPost,c_fkuser,c_state,c_replyPerson,c_pid)
+        values(#{c_content},now(),#{p_id},#{user.u_id},2,#{c_replyPerson},
+        #{c_pid})
+    </insert>
+
+    <select id="getCommentByUser" resultMap="myCommentTableMap">
+        select * from t_commenttable t
+        inner join t_user u
+        on t.c_fkuser = u.u_id
+        where c_fkuser = #{u_id} and c_deleteState = 0
+        order by t.c_generate desc
+    </select>
+    <select id="getCommentTableByCommentId" resultMap="myCommentTableMap">
+        select * from t_commenttable t
+        inner join t_user u
+        on t.c_fkuser = u.u_id
+        where t.c_id = #{c_id} and c_deleteState = 0
+    </select>
+    <update id="deleteComment">
+        update t_commenttable set c_deleteState = 1
+        where c_id = #{c_id}
+    </update>
+
+
+</mapper>

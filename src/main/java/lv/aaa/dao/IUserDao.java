@@ -26,4 +26,16 @@ public interface IUserDao {
 
     //根据题目查询出 出题人
     String getTeacherBySubject(Integer subjectId);
+
+    //建立学生和题目之间的关系，并往学生和题目的关系表中添加剩余时间
+    boolean addStudentAndSubjectContactBySubject(EncapsulationData encapsulationData);
+
+    //根据用户id查询出用户信息
+    T_user getUserByUserId(Integer userId);
+
+    //上传用户头像的路径
+    boolean uploadHeadPath(T_user user);
+
+
+
 }
